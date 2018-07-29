@@ -4,7 +4,10 @@ project(maze)
 
 set(CMAKE_CXX_STANDARD 14)
 
+include_directories(.)
+
 set(HEADERS
+    "util/algo.h"
     "maze/maze.h"
 )
 

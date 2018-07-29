@@ -3,7 +3,7 @@
 #include "maze/maze.h"
 
 int main(int argc, char *argv[]) {
-    Maze maze(3, 3);
+    maze maze(3, 3);
 
     maze.add_road(point(0, 1), point(0, 2));
     maze.add_road(point(0, 0), point(1, 0));

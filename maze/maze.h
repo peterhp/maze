@@ -4,26 +4,11 @@
 #include <string>
 #include <vector>
 #include <utility>
-#include <algorithm>
-#include <iterator>
-#include <sstream>
 
 typedef std::pair<int, int> point;
 
 static inline point mid_point(const point &pt1, const point &pt2) {
     return point((pt1.first + pt2.first) / 2, (pt1.second + pt2.second) / 2);
-}
-
-template<typename InputIt, typename UnaryOp>
-std::string join(InputIt first, InputIt last, UnaryOp unary_op, const std::string &deli = std::string()) {
-    std::vector<std::string> strs;
-    std::transform(first, last, std::back_inserter(strs), unary_op);
-
-    std::ostringstream oss;
-    std::copy(strs.begin(), strs.end(), std::ostream_iterator<std::string>(oss, deli.c_str()));
-
-    std::string str= oss.str();
-    return str.empty() ? str : str.substr(0, str.length() - deli.length());
 }
 
 #define CELL 1
@@ -33,9 +18,9 @@ std::string join(InputIt first, InputIt last, UnaryOp unary_op, const std::strin
 #define RUNE_ROAD "[R]"
 #define RUNE_WALL "[W]"
 
-class Maze {
+class maze {
 public:
-    Maze(int cell_rows, int cell_cols);
+    maze(int cell_rows, int cell_cols);
 
     void add_road(const point &cell1, const point &cell2);
 
